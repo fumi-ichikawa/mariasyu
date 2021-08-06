@@ -16,7 +16,7 @@ div {
 }
 
 body {
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  font-family: 'klee',serif;
   color: #3b4043;
   background-color: #ece5e2;
 }
@@ -56,7 +56,7 @@ a {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.nav__btn{
+.btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -67,26 +67,28 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
-.nav__btn:hover{
+.btn:hover{
   /* color: #fff;
   background-color: #dcdddd; */
   opacity: 0.5;
 }
 
-.nav__logout{
+/* .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
   color: #00ada9;
   text-decoration: none;
   user-select: none;
-}
-.nav__logout:hover{
+} */
+/* .nav__logout:hover{
   opacity: 0.5;
-}
+} */
+
+
 
 /* フォーム周り */
-.form__wrapper{
+/* .form__wrapper{
   min-height: calc(100vh - 161px);
 }
 
@@ -119,7 +121,7 @@ a {
 .form__btn:hover {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
-}
+} */
 
 /* メイン */
 
