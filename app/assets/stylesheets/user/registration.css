@@ -13,7 +13,7 @@
 .form-wrap {
   width: 50%;
   background-color: white;
-  padding-bottom: 70px;
+  padding: 50px 0;
 }
 
 .form-header {
@@ -65,11 +65,11 @@
   font-family: 'klee',serif;
 }
 
-.info-text {
+/* .info-text {
   color: #888;
   font-size: 15px;
   margin-top: 3px;
-}
+} */
 
 /* .form-info-header {
   font-weight: bold;
