@@ -55,6 +55,7 @@ a {
   margin: 0.67em 0;
   font-family: 'Courier New', Courier, monospace;
 }
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -67,8 +68,9 @@ a {
   transition: 0.4s ease;
 }
 .nav__btn:hover{
-  color: #fff;
-  background-color: #dcdddd;
+  /* color: #fff;
+  background-color: #dcdddd; */
+  opacity: 0.5;
 }
 
 .nav__logout{
