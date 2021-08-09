@@ -57,3 +57,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem 'active_hash'
+gem 'pry-rails'
+
+group :development do
+  gem 'rubocop', require: false
+end
