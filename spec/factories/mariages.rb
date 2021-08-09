@@ -4,7 +4,7 @@ FactoryBot.define do
     text { Faker::Lorem.sentence }
     category_id { Faker::Number.between(from: 2, to: 6) }
     taste_id { Faker::Number.between(from: 2, to: 6) }
-    
+
     association :user
 
     after(:build) do |mariage|

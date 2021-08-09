@@ -15,7 +15,6 @@ class MariagesController < ApplicationController
     end
   end
 
-
   private
 
   def mariage_params

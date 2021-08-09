@@ -19,31 +19,31 @@ RSpec.describe Mariage, type: :model do
           @mariage.valid?
           expect(@mariage.errors.full_messages).to include('User must exist')
         end
-  
+
         it 'imageが空では登録できないこと' do
           @mariage.image = nil
           @mariage.valid?
           expect(@mariage.errors.full_messages).to include("Image can't be blank")
         end
-  
+
         it 'titleが空では登録できないこと' do
           @mariage.title = ''
           @mariage.valid?
           expect(@mariage.errors.full_messages).to include("Title can't be blank")
         end
-  
+
         it 'textが空では登録できないこと' do
           @mariage.text = ''
           @mariage.valid?
           expect(@mariage.errors.full_messages).to include("Text can't be blank")
         end
-  
+
         it 'categoryが空では登録できないこと' do
           @mariage.category_id = 1
           @mariage.valid?
           expect(@mariage.errors.full_messages).to include("Category can't be blank")
         end
-  
+
         it 'tasteが空では登録できないこと' do
           @mariage.taste_id = 1
           @mariage.valid?

@@ -16,5 +16,4 @@ class Mariage < ApplicationRecord
     validates :category_id
     validates :taste_id
   end
-
 end
