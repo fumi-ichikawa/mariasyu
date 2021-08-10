@@ -1,7 +1,10 @@
 class MariagesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   def index
+    # @mariage = Mariage.order(created_at: :desc).limit(5)
+    query = 'SELECT * FROM mariages order by created_at DESC'
+    @mariages = Mariage.find_by_sql(query)
   end
 
   def new

@@ -1,0 +1,54 @@
+.mariage-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+/* .mariage-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+} */
+
+.mariage-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #00ada9;
+  font-weight: bold;
+}
+
+.mariage-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mariage-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.mariage-img-content {
+  position: relative;
+}
+
+.mariage-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.mariage-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.mariage-name {
+  font-size: 2.5vh;
+}
