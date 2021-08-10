@@ -1,14 +1,31 @@
-<%# <main class="main">
-  <div class="inner"> %>
-    <%# <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
-    <%# </div>  %>
+<div class="top-image">
+  <%= image_tag "mariasyu-top-0acb78d13fcfd7543f9f3b74aee8fcc9b824668dd1ea2c160bcfea4e53871de4" %>
+  <div class='top-logo'>
+    <%= image_tag "mariasyu-logo-94f1e2b9674a0f9bde79de28c025930803fa5a5000d6fd2cbf83f6f62d53e6cd.png", class:"logo-image" %>
+  </div>
+</div>
 
-    <div class="top-image">
-      <%= image_tag "mariasyu-top-0acb78d13fcfd7543f9f3b74aee8fcc9b824668dd1ea2c160bcfea4e53871de4" %>
-      <div class='top-logo'>
-        <%= image_tag "mariasyu-logo-94f1e2b9674a0f9bde79de28c025930803fa5a5000d6fd2cbf83f6f62d53e6cd.png", class:"logo-image" %>
-      </div>
+
+  <div class='mariage-contents'>
+    <%# <h2 class='title'>ピックアップカテゴリー</h2> %>
+    <div class="subtitle" >
+      新着投稿一覧
     </div>
-  <%# </div>
-</main> %>
+    <ul class='mariage-lists'>
+
+      <% @mariages.each do |mariage| %>
+        <li class='list'>
+          <%= link_to root_path, method: :get do %>
+          <div class='mariage-img-content'>
+            <%= image_tag mariage.image, class: "mariage-img"  if mariage.image.attached? %>
+          </div>
+          <div class='mariage-info'>
+            <h3 class='mariage-name'>
+              <%= mariage.title %>
+            </h3>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
