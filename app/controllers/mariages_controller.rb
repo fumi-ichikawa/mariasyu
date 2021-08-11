@@ -25,9 +25,19 @@ class MariagesController < ApplicationController
   end
 
   def edit
+    @mariage = Mariage.find(params[:id])
+    unless @mariage.user_id == current_user.id
+      redirect_to action: :index
+    end
   end
 
   def update
+    @mariage = Mariage.find(params[:id])
+    if @mariage.update(mariage_params)
+      redirect_to mariage_path(@mariage)
+    else
+      render :edit
+    end
   end
 
   def destroy
