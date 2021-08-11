@@ -21,6 +21,7 @@ class MariagesController < ApplicationController
   end
 
   def show
+    @mariage = Mariage.find(params[:id])
   end
 
   def edit
@@ -31,7 +32,7 @@ class MariagesController < ApplicationController
 
   def destroy
   end
-  
+
 
   private
 

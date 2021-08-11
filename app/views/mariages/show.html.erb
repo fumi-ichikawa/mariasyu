@@ -1,54 +1,54 @@
-<main class="main">
-  <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
-        <%= "プロトタイプのタイトル"%>
+    <div class="mariage__wrapper">
+      <p class="mariage__hedding">
+        <%= @mariage.title %>
       </p>
-      <%= link_to "by プロトタイプの投稿者", root_path, class: :prototype__user %>
+      <%# <%= link_to @mariage.user.name, "/users/#{@mariage.user.id}", class: :mariage__user %> 
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", root_path, class: :prototype__btn %>
-          <%= link_to "削除する", root_path, class: :prototype__btn %>
+      <% if user_signed_in? && current_user.id == @mariage.user_id %>
+        <div class="mariage__manage">
+          <%= link_to "編集する", edit_mariage_path(@mariage.id), class: :mariage__btn %>
+          <%= link_to "削除する", mariage_path(@mariage.id), class: :mariage__btn, method: :delete %>
         </div>
+      <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="prototype__image">
-        <%= image_tag "プロトタイプの画像" %>
+      <div class="mariage__image">
+        <%= image_tag @mariage.image %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>
-          <p class="detail__message">
-            <%= "プロトタイプのキャッチコピー" %>
+      <%# <div class="prototype__body"> %>
+        <div class="mariage__detail">
+          <%# <p class="detail__title"></p> %>
+          <%# <p class="detail__message"> %>
+          <p>
+            <%= @mariage.text %>
           </p>
         </div>
-        <div class="prototype__detail">
-          <p class="detail__title">コンセプト</p>
-          <p class="detail__message">
-            <%= "プロトタイプのコンセプト" %>
-          </p>
-        </div>
-      </div>
-      <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-          <%# <%= form_with model: モデル名,local: true do |f|%>
-            <div class="field">
-              <%# <%= f.label :hoge, "コメント" %><br />
-              <%# <%= f.text_field :hoge, id:"comment_text" %>
-            </div>
+      <%# </div> %>
+      <div class="mariage__comments">
+
+        <%# <% if user_signed_in? %>
+          <%# <%= form_with model: [@mariage, @comment], local: true do |f| %>
+            <%# <div class="field">
+              <%= f.label :text, "コメント" %><br />
+              <%# <%= f.text_field :text, id:"comment_text" %>
+            <%# </div>
             <div class="actions">
-              <%# <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <%# <% end %> 
+              <%= f.submit "送信する", class: :form__btn  %>
+            <%# </div>
+          <% end %> 
+        <%# <% end %> 
+        
         <%# // ログインしているユーザーには上記を表示する %>
-        <ul class="comments_lists">
+        <%# <ul class="comments_lists"> %>
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <li class="comments_list">
-              <%# <%= " コメントのテキスト "%>
-              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+            <%# <li class="comments_list">
+              <% @comments.each do |comment|%>
+                <%# <p>
+                  <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %>
+                  <%# <%= comment.text %>
+                <%# </p>
+              <% end %> 
             </li>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
     </div>
-  </div>
-</main>
