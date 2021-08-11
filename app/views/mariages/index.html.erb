@@ -15,7 +15,7 @@
 
       <% @mariages.each do |mariage| %>
         <li class='list'>
-          <%= link_to root_path, method: :get do %>
+          <%= link_to mariage_path(mariage.id), method: :get do %>
           <div class='mariage-img-content'>
             <%= image_tag mariage.image, class: "mariage-img"  if mariage.image.attached? %>
           </div>

@@ -20,6 +20,32 @@ class MariagesController < ApplicationController
     end
   end
 
+  def show
+    @mariage = Mariage.find(params[:id])
+    @comment = Comment.new
+    @comments = @mariage.comments.includes(:user)
+  end
+
+  def edit
+    @mariage = Mariage.find(params[:id])
+    redirect_to action: :index unless @mariage.user_id == current_user.id
+  end
+
+  def update
+    @mariage = Mariage.find(params[:id])
+    if @mariage.update(mariage_params)
+      redirect_to mariage_path(@mariage)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    mariage = Mariage.find(params[:id])
+    mariage.destroy
+    redirect_to root_path
+  end
+
   private
 
   def mariage_params

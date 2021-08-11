@@ -1,0 +1,94 @@
+/* 詳細ページ */
+
+.show-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.mariage-wrap{
+  min-height: calc(100vh - 161px);
+  width: 50%;
+  background-color: white;
+  padding: 50px 0;
+  margin: 0 auto 0 auto;  
+}
+.mariage__hedding{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+
+}
+.mariage-user{
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  text-decoration: underline;
+}
+.mariage__manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+.mariage__btn{
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+  width: 100px;
+  text-align: center;
+}
+.mariage__btn:hover{
+  color: #fff;
+  background: #999;
+}
+.mariage__image{
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.mariage__detail{
+  flex-direction: column;
+  margin-bottom: 8px;
+  padding: 100px;
+  white-space: pre-line;
+}
+
+.detail__title{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding-top: 10px;
+  text-indent: -20px;
+}
+
+.mariage__comments{
+  background-color: white;
+  padding: 20px;
+  margin: 28px auto 40px ;
+  width: 50%;
+  flex-direction: column;
+}
+
+.field{
+ text-align: center;
+ padding:30px 0;
+}
+
+.comments_list{
+  padding-bottom: 10px;
+  padding-left: 60px;
+  overflow-wrap: break-word;
+}
+
+.comment_user{
+  font-size: 16px;
+  color: #999;
+  text-decoration: underline;
+}
