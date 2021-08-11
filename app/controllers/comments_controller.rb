@@ -6,11 +6,12 @@ class CommentsController < ApplicationController
     else
       @mariage = @comment.mariage
       @comments = @mariage.comments
-      render "mariages/show" 
+      render 'mariages/show'
     end
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, mariage_id: params[:mariage_id])
   end

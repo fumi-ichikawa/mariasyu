@@ -28,9 +28,7 @@ class MariagesController < ApplicationController
 
   def edit
     @mariage = Mariage.find(params[:id])
-    unless @mariage.user_id == current_user.id
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless @mariage.user_id == current_user.id
   end
 
   def update
@@ -47,7 +45,6 @@ class MariagesController < ApplicationController
     mariage.destroy
     redirect_to root_path
   end
-
 
   private
 
