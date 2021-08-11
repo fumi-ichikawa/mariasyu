@@ -41,6 +41,9 @@ class MariagesController < ApplicationController
   end
 
   def destroy
+    mariage = Mariage.find(params[:id])
+    mariage.destroy
+    redirect_to root_path
   end
 
 
