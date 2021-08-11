@@ -11,4 +11,5 @@ class User < ApplicationRecord
                        confirmation: true, allow_blank: true
 
   has_many :mariages
+  has_many :comments
 end
