@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     else
       @mariage = @comment.mariage
       @comments = @mariage.comments
-      render "mariage/show" 
+      render "mariages/show" 
     end
   end
 

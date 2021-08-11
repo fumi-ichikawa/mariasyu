@@ -22,6 +22,8 @@ class MariagesController < ApplicationController
 
   def show
     @mariage = Mariage.find(params[:id])
+    @comment = Comment.new
+    @comments = @mariage.comments.includes(:user)
   end
 
   def edit
