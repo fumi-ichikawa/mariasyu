@@ -13,23 +13,19 @@
     <div class="mariage__image">
       <%= image_tag @mariage.image %>
     </div>
-    <%# <div class="prototype__body"> %>
-      <div class="mariage__detail">
-        <%# <p class="detail__title"></p> %>
-        <%# <p class="detail__message"> %>
-        <p class="detail__title">投稿者</p>
-        <%= link_to @mariage.user.nickname, "/users/#{@mariage.user.id}", class:"mariage-user" %>
-        <p class="detail__title">マリアージュの説明</p>
-        <%= @mariage.text %>
-        <p class="detail__title">料理のカテゴリー</p>
-        <%= @mariage.category.name %>
-        <p class="detail__title">お酒のテイスト</p>
-        <%= @mariage.taste.name %>
-      </div>
+    <div class="mariage__detail">
+      <p class="detail__title">投稿者</p>
+      <%= link_to @mariage.user.nickname, "/users/#{@mariage.user.id}", class:"mariage-user" %>
+      <p class="detail__title">マリアージュの説明</p>
+      <%= @mariage.text %>
+      <p class="detail__title">料理のカテゴリー</p>
+      <%= @mariage.category.name %>
+      <p class="detail__title">お酒のテイスト</p>
+      <%= @mariage.taste.name %>
+    </div>
   </div>
   <div class="comment-wrap">
     <div class="mariage__comments">
-      <%# <div class="comment-form"> %>
         <% if user_signed_in? %>
           <%= form_with model: [@mariage, @comment], local: true do |f| %>
             <div class="field">
@@ -37,9 +33,7 @@
               <%= f.text_field :text, size: "50" %>
               <%= f.submit "コメント送信", class: :mariage__btn %>
             </div>
-
           <% end %> 
-      <%# </div> %>
       <% else %>
         <div class="field">
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>

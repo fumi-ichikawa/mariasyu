@@ -83,18 +83,11 @@ a {
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
-  .inner {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .page-heading {
-    font-size: 24px;
-  }
   .card {
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
+  .mariage_image{
     width: 60%;
   }
 }
@@ -103,9 +96,6 @@ a {
 @media (max-width: 599px) {
   .logo {
     width: 120px;
-  }
-  .page-heading {
-    font-size: 20px;
   }
   .card {
     width: 100%;
@@ -117,7 +107,7 @@ a {
   .card__summary {
     font-size: 14px;
   }
-  .prototype_image{
+  .mariage_image{
     width: 100%;
   }
   .table{
