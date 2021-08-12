@@ -1,17 +1,12 @@
 .mariage-contents {
   background-color: #FFF;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 10vh 0;
 }
-
-/* .mariage-contents>.title {
-  font-size: 5vh;
-  line-height: 1.4;
-  font-weight: bold;
-} */
-
 .mariage-contents>.subtitle {
   font-size: 3vh;
   margin: 1vh 0;
@@ -30,7 +25,7 @@
 .mariage-lists>.list {
   width: 37vh;
   padding: 1vw;
-  background-color: #FFF;
+  /* background-color: #FFF; */
 }
 
 
@@ -44,7 +39,7 @@
 }
 
 .mariage-info {
-  background-color: #FFF;
+  /* background-color: #FFF; */
   color: black;
   padding: 1vw;
 }
