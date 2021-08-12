@@ -18,7 +18,7 @@
         <%# <p class="detail__title"></p> %>
         <%# <p class="detail__message"> %>
         <p class="detail__title">投稿者</p>
-        <%= link_to @mariage.user.nickname, class:"mariage-user" %>
+        <%= link_to @mariage.user.nickname, "/users/#{@mariage.user.id}", class:"mariage-user" %>
         <p class="detail__title">マリアージュの説明</p>
         <%= @mariage.text %>
         <p class="detail__title">料理のカテゴリー</p>
@@ -41,13 +41,15 @@
           <% end %> 
       <%# </div> %>
       <% else %>
-        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <div class="field">
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        </div>
       <% end %> 
       <ul class="comments_lists">
           <% @comments.each do |comment|%>
             <p>
             <li class="comments_list">
-              <%= link_to comment.user.nickname, root_path, class: :comment_user %>
+              <%= link_to comment.user.nickname, "/users/#{@mariage.user.id}", class: :comment_user %>
               <%= comment.text %>
             </li>
             </p>
