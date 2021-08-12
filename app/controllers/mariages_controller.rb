@@ -1,5 +1,7 @@
 class MariagesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_mariage, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     # @mariage = Mariage.order(created_at: :desc).limit(5)
@@ -21,18 +23,14 @@ class MariagesController < ApplicationController
   end
 
   def show
-    @mariage = Mariage.find(params[:id])
     @comment = Comment.new
     @comments = @mariage.comments.includes(:user)
   end
 
   def edit
-    @mariage = Mariage.find(params[:id])
-    redirect_to action: :index unless @mariage.user_id == current_user.id
   end
 
   def update
-    @mariage = Mariage.find(params[:id])
     if @mariage.update(mariage_params)
       redirect_to mariage_path(@mariage)
     else
@@ -41,8 +39,7 @@ class MariagesController < ApplicationController
   end
 
   def destroy
-    mariage = Mariage.find(params[:id])
-    mariage.destroy
+    @mariage.destroy
     redirect_to root_path
   end
 
@@ -50,5 +47,13 @@ class MariagesController < ApplicationController
 
   def mariage_params
     params.require(:mariage).permit(:title, :text, :category_id, :taste_id, :image).merge(user_id: current_user.id)
+  end
+
+  def set_mariage
+    @mariage = Mariage.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless @mariage.user_id == current_user.id
   end
 end
