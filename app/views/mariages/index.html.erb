@@ -5,27 +5,50 @@
   </div>
 </div>
 
-
-  <div class='mariage-contents'>
-    <%# <h2 class='title'>ピックアップカテゴリー</h2> %>
-    <div class="subtitle" >
-      新着投稿一覧
-    </div>
-    <ul class='mariage-lists'>
-
-      <% @mariages.each do |mariage| %>
-        <li class='list'>
-          <%= link_to mariage_path(mariage.id), method: :get do %>
-          <div class='mariage-img-content'>
-            <%= image_tag mariage.image, class: "mariage-img"  if mariage.image.attached? %>
-          </div>
-          <div class='mariage-info'>
-            <h3 class='mariage-name'>
-              <%= mariage.title %>
-            </h3>
-          </div>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+<div class="mariage-mean">
+  <%= image_tag "edamame.jpeg", class:"mean-image" %>
+  <div class="top-text">
+    【Mariage】  マリアージュ<br/>
+    <br/>
+    "お酒と料理の相性が良く<br/>
+    お互いを引き立て合っている"<br/>
+    <br/>
+    という意味で使われる。<br/>
   </div>
+</div>
+
+<div class="mariage-mean">
+  <div class="top-text">
+    【Maria<span class="color-change">S</span>yu】 マリアー<span class="color-change">シュ</span><br/>
+    <br/>
+    "お酒と料理の組み合わせを<br/>
+    知りたい方や薦めたい方などが<br/>
+    投稿・検索することができる。”<br/>
+  </div>
+  <%= image_tag "sushi.jpeg", class:"mean-image" %>
+</div>
+
+<div class='mariage-contents'>
+  <%# <h2 class='title'>ピックアップカテゴリー</h2> %>
+  <div class="subtitle" >
+    新着投稿一覧
+    <p class="limit">(最新3件のみ表示)</p>
+  </div>
+  <ul class='mariage-lists'>
+
+    <% @mariages.each do |mariage| %>
+      <li class='list'>
+        <%= link_to mariage_path(mariage.id), method: :get do %>
+        <div class='mariage-img-content'>
+          <%= image_tag mariage.image, class: "mariage-img"  if mariage.image.attached? %>
+        </div>
+        <div class='mariage-info'>
+          <h3 class='mariage-name'>
+            <%= mariage.title %>
+          </h3>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
