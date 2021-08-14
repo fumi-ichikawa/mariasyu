@@ -1,5 +1,57 @@
+/* 
+トップページ */
+
+.top-image {
+  width: 100vw;
+  position: relative;
+  margin-top: 0;
+}
+
+.top-logo {
+  position: absolute;
+  top:0;
+  left: 50px;
+  width: 40%;
+}
+
+.logo-image{
+  width: 80%;
+  margin-top: 10%;
+  margin-left: 5vw;
+}
+
+/* マリアージュの説明 */
+.mariage-mean{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+  background-color: #f5f5f5;
+  box-sizing: content-box;
+}
+.mean-image{
+  width: 30%;
+  margin: 0 5vw;
+}
+.top-text{
+  /* width: 30%; */
+  /* background-color: white; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  display: inline;
+  margin: auto 0;
+  
+}
+.color-change{
+  font-weight: bold;
+  color: #00ada9;
+}
+
+
+/* 新着投稿一覧 */
 .mariage-contents {
-  background-color: #FFF;
+  background-color: #f5f5f5;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -14,7 +66,10 @@
   color: #00ada9;
   font-weight: bold;
 }
-
+.limit{
+  font-size: 2vh;
+  color: gray;
+}
 .mariage-lists {
   width: 100vw;
   display: flex;
