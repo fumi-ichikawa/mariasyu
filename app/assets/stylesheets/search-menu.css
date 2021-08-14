@@ -51,6 +51,9 @@ input {
   padding : 15px;
   line-height: 1;
   cursor :pointer;
+  position: absolute;
+  right: 10px;
+  top: 70px;
 }
 
 .pull-down{
