@@ -41,13 +41,13 @@ RSpec.describe Mariage, type: :model do
         it 'categoryが空では登録できないこと' do
           @mariage.category_id = 1
           @mariage.valid?
-          expect(@mariage.errors.full_messages).to include("Category can't be blank")
+          expect(@mariage.errors.full_messages).to include("Category を選択してください")
         end
 
         it 'tasteが空では登録できないこと' do
           @mariage.taste_id = 1
           @mariage.valid?
-          expect(@mariage.errors.full_messages).to include("Taste can't be blank")
+          expect(@mariage.errors.full_messages).to include("Taste を選択してください")
         end
       end
     end
