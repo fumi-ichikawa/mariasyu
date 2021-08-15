@@ -48,9 +48,12 @@
       <div class='form-text-wrap'>
         <%= f.label :image, "マリアージュの写真（必須）", class:"form-text" %>
         <%= f.file_field :image, id:"mariage_image", class:"select-box" %>
+        <%= image_tag @mariage.image, id: 'image' if @mariage.image.present? %>
+        <div id="image-list"></div>
       </div>
     </div>
   <%= f.submit "投稿する", class: "form-btn"  %>
+
   <% end %>
   </div>
 
