@@ -1,5 +1,5 @@
 <style>.header {
-    display: none;
+  display: none;
 }</style>
 
 <%= render "shared/second-header"%>
@@ -9,8 +9,10 @@
   <div class='form-header'>
     <h2 class="form-header-text">ユーザーログイン</h2>
   </div>
-  <%= render 'shared/error_messages', model: f.object %>
-
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :email, "メールアドレス", class:"form-text" %><br />
