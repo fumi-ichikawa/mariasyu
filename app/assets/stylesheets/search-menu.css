@@ -18,14 +18,15 @@
   cursor :pointer;
 } */
 
-input {
+.checkbox {
   display: none;
 }
 
 .menu ul {
   margin: 0;
   padding: 0;
-  background :#f4f4f4;
+  /* background :#f4f4f4; */
+  background-color: rgba(160,216,239,0.5);
   list-style: none;
 }
 
@@ -58,7 +59,9 @@ input {
 
 .pull-down{
   text-align: center;
+  z-index: +1;
 }
 .pull-down-list:hover{
-  background-color: lightgray;
+  background-color: rgba(211,211,221,0.5);
+  font-size: 1.1em;
 }
