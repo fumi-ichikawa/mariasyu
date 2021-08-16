@@ -22,7 +22,7 @@ class MariagesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @mariage.comments.includes(:user)
+    @comments = @mariage.comments.includes(:user).order("created_at DESC")
   end
 
   def edit
