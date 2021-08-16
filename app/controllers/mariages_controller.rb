@@ -4,7 +4,7 @@ class MariagesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @mariages = Mariage.order("created_at DESC").limit(3)
+    @mariages = Mariage.order('created_at DESC').limit(3)
   end
 
   def new
@@ -22,7 +22,7 @@ class MariagesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @mariage.comments.includes(:user).order("created_at DESC")
+    @comments = @mariage.comments.includes(:user).order('created_at DESC')
   end
 
   def edit
