@@ -9,3 +9,6 @@ ja:
         image: 画像
         category_id: カテゴリー
         taste_id: テイスト
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

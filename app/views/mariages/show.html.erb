@@ -13,6 +13,9 @@
     <div class="mariage__image">
       <%= image_tag @mariage.image %>
     </div>
+    <div class="mariage_time">
+      <%= l @mariage.created_at %>
+    </div>
     <div class="mariage__detail">
       <p class="detail__title">投稿者</p>
       <%= link_to @mariage.user.nickname, "/users/#{@mariage.user.id}", class:"mariage-user" %>
@@ -43,7 +46,9 @@
           <% @comments.each do |comment|%>
             <p>
             <li class="comments_list">
-              <%= link_to comment.user.nickname, "/users/#{@mariage.user.id}", class: :comment_user %>
+              <p><%= link_to comment.user.nickname, "/users/#{@mariage.user.id}", class: :comment_user %>
+                <span class="comment_time"><%= l comment.created_at %></span>
+              </p>
               <%= comment.text %>
             </li>
             </p>
