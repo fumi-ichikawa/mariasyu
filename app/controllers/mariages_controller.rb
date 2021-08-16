@@ -4,9 +4,7 @@ class MariagesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    # @mariage = Mariage.order(created_at: :desc).limit(5)
-    query = 'SELECT * FROM mariages order by created_at DESC LIMIT 3'
-    @mariages = Mariage.find_by_sql(query)
+    @mariages = Mariage.order("created_at DESC").limit(3)
   end
 
   def new
