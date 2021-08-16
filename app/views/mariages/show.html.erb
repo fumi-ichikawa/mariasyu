@@ -42,16 +42,22 @@
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         </div>
       <% end %> 
-      <ul class="comments_lists">
+      <ul id="comments", class="comments_lists">
           <% @comments.each do |comment|%>
-            <p>
-            <li class="comments_list">
-              <p><%= link_to comment.user.nickname, "/users/#{@mariage.user.id}", class: :comment_user %>
-                <span class="comment_time"><%= l comment.created_at %></span>
-              </p>
-              <%= comment.text %>
-            </li>
-            </p>
+            <div class='comment-display'>
+              <div class='comment-top'>
+                <p>
+                <li class="comments_list">
+                  <p><%= link_to comment.user.nickname, "/users/#{@mariage.user.id}", class: :comment_user %>
+                    <span class="comment_time"><%= l comment.created_at %></span>
+                  </p>
+                  <div class='comment-bottom'>
+                    <%= comment.text %>
+                  </div>
+                </li>
+                </p>
+              </div>
+            </div>
           <% end %> 
       </ul>
     </div>
