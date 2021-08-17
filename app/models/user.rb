@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates :password, format: { with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' }, length: { minimum: 6 },
-                       confirmation: true, allow_blank: true
+  # PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  # validates :password, format: { with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' }, length: { minimum: 6 },
+  #                      confirmation: true, allow_blank: true
 
   has_many :mariages
   has_many :comments
@@ -24,6 +24,6 @@ class User < ApplicationRecord
       sns.user = user
       sns.save
     end
-    user
+    { user: user, sns: sns }
   end
 end
