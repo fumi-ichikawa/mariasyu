@@ -51,15 +51,43 @@
 }
 .form-btn{
   width: 50%;
-  margin: 100px auto;
+  margin: 70px auto 30px;
   background-color: white;
   border: solid 1px #00ada9;
   color: #00ada9;
-  line-height: 48px;
   font-size: 15px;
   cursor: pointer;
   font-family: 'klee',serif;
+  line-height: 48px;
 }
 .form-btn:hover{
+  opacity: 0.5;
+}
+.sns-login{
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+.sns-login a{
+  color: white;
+}
+.sns-btn-f{
+  padding: 15px 10px;
+  margin-right: 20px;
+  background-color: #3B5998;
+  border: solid 1px #3B5998;
+  font-size: 15px;
+  cursor: pointer;
+}
+.sns-btn-f:hover{
+  opacity: 0.5;
+}
+.sns-btn-g{
+  padding: 15px 10px;
+  background-color: #DB4437;
+  border: solid 1px #DB4437;
+  font-size: 15px;
+  cursor: pointer;
+}
+.sns-btn-g:hover{
   opacity: 0.5;
 }

@@ -1,6 +1,11 @@
-<style>.header {
-    display: none;
-}</style>
+<style>
+.header {
+  display: none;
+}
+body {
+  padding-top: 0;
+}
+</style>
 
 <%= render "shared/second-header"%>
 
@@ -50,8 +55,11 @@
       </div>
     <% end %>
     <%= f.submit "会員登録", class:"form-btn"%>
-    <%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, method: :post%>
-    <%= link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, method: :post%>
+    <p>もしくは</p>
+    <div class="sns-login">
+      <span class="sns-btn-f"><%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post%></span>
+      <span class="sns-btn-g"><%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%></span>
+    </div>
   </div>
 <% end %>
 <%= render "shared/second-footer"%>
