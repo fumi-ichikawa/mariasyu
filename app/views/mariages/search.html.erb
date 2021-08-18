@@ -1,0 +1,14 @@
+<div class="user__wrapper">
+  <h2 class="user__hedding">
+  <% if params[:keyword].present?%>
+    <%= params[:keyword] + "　の検索結果"%>
+  <% else %>
+    <%="全ての投稿一覧"%>
+  <% end %>
+    
+  </h2>
+  <div class="user__card">
+  <% @mariages.each do |mariage| %>
+    <%= render partial: "mariage", locals: { mariage: mariage } %>
+  <% end %>
+</div>
