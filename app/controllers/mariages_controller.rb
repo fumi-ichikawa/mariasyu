@@ -42,7 +42,7 @@ class MariagesController < ApplicationController
   end
 
   def search
-    @mariages = Mariage.search(params[:keyword])
+    @mariages = SearchMariagesService.search(params[:keyword])
   end
 
   
