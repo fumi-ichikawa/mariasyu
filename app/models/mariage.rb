@@ -17,4 +17,12 @@ class Mariage < ApplicationRecord
     validates :category_id
     validates :taste_id
   end
+
+  def self.search(search)
+    if search != ""
+      Mariage.where('text LIKE(?)', "%#{search}%")
+    else
+      Mariage.all
+    end
+  end
 end
