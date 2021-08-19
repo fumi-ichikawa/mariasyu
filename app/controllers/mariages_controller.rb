@@ -59,4 +59,5 @@ class MariagesController < ApplicationController
   def move_to_index
     redirect_to action: :index unless @mariage.user_id == current_user.id
   end
+
 end
