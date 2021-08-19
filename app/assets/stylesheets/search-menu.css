@@ -1,33 +1,4 @@
-/* ワード検索フォーム */
-.search-form{
-  display: flex;
-  align-items: center;
-}
-.search-input{
-  width: 30vw;
-  margin: auto;
-  height: 40px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 0.8em;
-  resize: none;
-  font-family: 'klee',serif;
-}
-.search-btn{
-  width: 5vw;
-  background-color: white;
-  border: solid 1px #00ada9;
-  color: #00ada9;
-  font-size: 0.8em;
-  cursor: pointer;
-  font-family: 'klee',serif;
-  height: 38px;
-}
-.search-btn:hover{
-  opacity: 0.5;
-}
+
 /* サーチメニューバー */
 .search-menu {
   max-width: 200px;
@@ -56,9 +27,16 @@
 .menu ul {
   margin: 0;
   padding: 0;
-  /* background :#f4f4f4; */
   background-color: rgba(160,216,239,0.5);
   list-style: none;
+  width: 250px;
+  display: block;
+  line-height: 1;
+  cursor :pointer;
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  text-align: center;
 }
 
 .menu li {
@@ -71,28 +49,43 @@
   transition: all 0.5s;
 }
 
-#menu_bar01:checked ~ #links01 li,
-#menu_bar02:checked ~ #links02 li {
+#menu_bar01:checked ~ #links01 li {
   height: 40px;
   opacity: 1;
 }
-.list-width{
-  width: 250px;
-  display: block;
-  margin: 0 0 4px 0;
-  padding : 15px;
-  line-height: 1;
-  cursor :pointer;
-  position: absolute;
-  right: 10px;
-  top: 70px;
+
+/* 一覧表示 */
+.pull-down-list:hover{
+  background-color: rgba(96,199,240,0.5);
+  font-size: 1.1em;
 }
 
-.pull-down{
-  text-align: center;
-  z-index: +1;
+/* ワード検索フォーム */
+
+.search-input,
+#q_category_id_eq,
+#q_taste_id_eq {
+  width: 100%;
+  margin: auto;
+  height: 40px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.8em;
+  resize: none;
+  font-family: 'klee',serif;
 }
-.pull-down-list:hover{
-  background-color: rgba(211,211,221,0.5);
-  font-size: 1.1em;
+.search-btn{
+  width: 10vw;
+  background-color: white;
+  border: solid 1px #00ada9;
+  color: #00ada9;
+  font-size: 0.8em;
+  cursor: pointer;
+  font-family: 'klee',serif;
+  height: 38px;
+  /* z-index: 7; */
+}
+.search-btn:hover{
+  opacity: 0.5;
 }

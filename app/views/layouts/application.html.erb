@@ -15,11 +15,7 @@
       <div class="inner">
         <div class="nav">
           <%= link_to "MariaSyu", root_path, class: :logo %>
-          <%= form_with(url: search_mariages_path, local: true, method: :get, class: "search-form") do |form| %>
-            <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-            <%= form.submit "検索", class: "search-btn" %>
-          <% end %>
-
+          
           <div class="menu">
             <% if user_signed_in? %>
               <span class="nav__right">
@@ -34,27 +30,32 @@
               </span>
             <% end %>
 
-
-
             <span class="search-menu">
               <label for="menu_bar01", class="btn">Search Mariage</label>
               <input type="checkbox" id="menu_bar01" class="checkbox"/>
-              <ul class="list-width", id="links01">
+              <ul id="links01">
                 <li class="pull-down"></li>
-                <li class="pull-down">  - 料理のタイプから検索 -</li>
-                <li class="pull-down-list"><a href="">和食</a></li>
-                <li class="pull-down-list"><a href="">洋食</a></li>
-                <li class="pull-down-list"><a href="">中華</a></li>
-                <li class="pull-down-list"><a href="">その他</a></li>
+                <li class="pull-down-list"><%= link_to "- 一覧で全て見る -", searches_index_path, method: :get %></li>
                 <li class="pull-down"></li>
-                <li class="pull-down">  - お酒のタイプから検索 -</li>
-                <li class="pull-down-list"><a href="">香りも楽しめるタイプ</a></li>
-                <li class="pull-down-list"><a href="">熟成された深い味わい</a></li>
-                <li class="pull-down-list"><a href="">軽くてスッキリとした飲み口</a></li>
-                <li class="pull-down-list"><a href="">コクのあるふくよかな味わい</a></li>
-                <li class="pull-down-list"><a href="">その他</a></li>
-                <li class="pull-down">
+                <li class="pull-down">  - キーワード検索 -</li>
+                <li hidden class="pull-down-word">
+                  <li hidden><%= form_with(url: search_mariages_path, local: true, method: :get) do |form| %></li>
+                    <li><%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %></li>
+                    <li><%= form.submit "検索", class: "search-btn" %></li>
+                  <li hidden><% end %></li>
                 </li>
+                <li class="pull-down"></li>
+                <li class="pull-down">  - カテゴリ検索 -</li>
+                <li hidden class="pull-down-category">
+                  <li hidden><%= search_form_for @p, url: searches_search_path, class:"search-form-category" do |f| %></li>
+                    <%# <%= f.label :name_eq, '- カテゴリ検索 -' %>
+                    <li><%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: '指定なし', class:"search-input", id:"mariage-category" %></li>
+                    <li><%= f.collection_select :taste_id_eq, Taste.all, :id, :name, include_blank: '指定なし', class:"search-cayegory", id:"mariage-taste" %></li>
+                    
+                    <li><%= f.submit '検索', class: "search-btn" %></li>
+                  <li hidden><% end %></li>
+                </li>
+                <li class="pull-down"></li>
               </ul>
             </span>
           </div>
