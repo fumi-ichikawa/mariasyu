@@ -1,11 +1,11 @@
 class SearchesController < ApplicationController
 
   def index
-    @mariages = Mariage.order('created_at DESC')
+    @mariages = Mariage.order('created_at DESC').page(params[:page])
   end
 
   def search
-    @results = @p.result
+    @mariages = @p.result.order('created_at DESC').page(params[:page])
   end
 
 end
