@@ -4,11 +4,15 @@
     <%= params[:keyword] + "　の検索結果"%>
   <% else %>
     <%="全ての投稿一覧"%>
-  <% end %>
-    
+  <% end  %>
+
   </h2>
   <div class="user__card">
-  <% @mariages.each do |mariage| %>
-    <%= render partial: "mariage", locals: { mariage: mariage } %>
-  <% end %>
+    <% @mariages.each do |mariage| %>
+      <%= render partial: "mariage", locals: { mariage: mariage } %>
+    <% end %>
+  </div>
+  <div class='p-top__paginate'>
+    <%= paginate @mariages %>
+  </div>
 </div>

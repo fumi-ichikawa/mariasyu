@@ -7,4 +7,7 @@
       <%= render partial: "mariages/mariage", locals: { mariage: mariage } %>
     <% end %>
   </div>
+  <div class='p-top__paginate'>
+    <%= paginate @mariages %>
+  </div>
 </div>

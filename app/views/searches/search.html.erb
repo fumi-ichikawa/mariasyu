@@ -1,0 +1,21 @@
+<div class="user__wrapper">
+  <% if @p.present? %>
+    <h2 class="user__hedding">
+      <%= "カテゴリ検索結果" %>
+    </h2>
+    <div class="user__card">
+      <% if @mariages.length !=0 %>
+        <% @mariages.each do |mariage| %>
+          <%= render partial: "mariages/mariage", locals: { mariage: mariage } %>
+        <% end %>
+      <% end %>
+    </div>
+      <div class='p-top__paginate'>
+        <%= paginate @mariages %>
+      </div>
+  <% else %>
+    <h2 class="user__hedding">
+      <%= "条件に合うマリアージュはありませんでした" %>
+    </h2>
+  <% end %>
+</div>
