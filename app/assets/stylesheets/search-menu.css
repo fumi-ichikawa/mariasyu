@@ -27,7 +27,7 @@
 .menu ul {
   margin: 0;
   padding: 0;
-  background-color: rgba(160,216,239,0.5);
+  background-color: rgba(0,173,169,0.5);
   list-style: none;
   width: 250px;
   display: block;
@@ -55,6 +55,9 @@
 }
 
 /* 一覧表示 */
+.pull-down-list a{
+  color: #3b4043;
+}
 .pull-down-list:hover{
   background-color: rgba(96,199,240,0.5);
   font-size: 1.1em;
@@ -75,17 +78,22 @@
   resize: none;
   font-family: 'klee',serif;
 }
+
 .search-btn{
-  width: 10vw;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
-  border: solid 1px #00ada9;
-  color: #00ada9;
-  font-size: 0.8em;
-  cursor: pointer;
-  font-family: 'klee',serif;
+  border: 1px solid #00ada9;
+  box-sizing: border-box;
+  width: 50%;
   height: 38px;
-  /* z-index: 7; */
+  font-size: 0.8em;
+  color: #00ada9;
+  text-align: left;
+  text-decoration: none;
 }
-.search-btn:hover{
-  opacity: 0.5;
+.search-btn:hover {
+  background-color: rgba(0,173,169,0.5);
+  color: #fff;
 }
