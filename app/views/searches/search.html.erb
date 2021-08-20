@@ -3,7 +3,6 @@
     <h2 class="user__hedding">
       <%= "カテゴリ検索結果" %>
     </h2>
-    <%= will_paginate @mariages,previous_label: '<', next_label: '>', inner_window: 1 %>
     <div class="user__card">
       <% if @mariages.length !=0 %>
         <% @mariages.each do |mariage| %>
