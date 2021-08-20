@@ -2,8 +2,5 @@
   <%= link_to image_tag(mariage.image, class: :card__img ), mariage_path(mariage.id),method: :get %>
   <div class="card__body">
     <%= link_to mariage.title, mariage_path(mariage.id), class: :card__title, method: :get %>
-    <p class="card__summary">
-    </p>
-    <%# <%= link_to "by" + mariage.user.nickname,  "/users/#{mariage.user.id}", class: :card__user, method: :get %>
   </div>
 </div> 

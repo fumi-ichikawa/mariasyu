@@ -1,5 +1,5 @@
 class MariagesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_mariage, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
@@ -39,6 +39,10 @@ class MariagesController < ApplicationController
   def destroy
     @mariage.destroy
     redirect_to root_path
+  end
+
+  def search
+    @mariages = SearchMariagesService.search(params[:keyword]).paginate(page: params[:page])
   end
 
   private
