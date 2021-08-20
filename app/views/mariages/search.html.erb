@@ -7,12 +7,11 @@
   <% end  %>
 
   </h2>
+  <%= will_paginate @mariages, previous_label: '<', next_label: '>', inner_window: 1 %>
   <div class="user__card">
     <% @mariages.each do |mariage| %>
       <%= render partial: "mariage", locals: { mariage: mariage } %>
     <% end %>
   </div>
-  <div class='p-top__paginate'>
-    <%= paginate @mariages %>
-  </div>
+  <%= will_paginate @mariages,previous_label: '<', next_label: '>', inner_window: 1 %>
 </div>

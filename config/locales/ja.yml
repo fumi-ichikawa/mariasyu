@@ -12,7 +12,3 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
-  will_paginate:
-    previous_label: "前"
-    next_label: "次"
-    page_gap: "…"
