@@ -71,4 +71,5 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth', '~>1.9.1'
 gem 'ransack'
-gem 'kaminari'
+gem 'will_paginate',           '3.1.7'
+gem 'bootstrap-will_paginate', '1.0.0'
