@@ -42,7 +42,7 @@ class MariagesController < ApplicationController
   end
 
   def search
-    @mariages = SearchMariagesService.search(params[:keyword]).paginate(page: params[:page], :per_page => 3)
+    @mariages = SearchMariagesService.search(params[:keyword]).paginate(page: params[:page])
   end
 
   
