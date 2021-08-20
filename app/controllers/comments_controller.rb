@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
     @mariage = @comment.mariage
     if @comment.save
       # redirect_to mariage_path(@comment.mariage)
-      ActionCable.server.broadcast  'comment_channel', content: @comment, nickname: @comment.user.nickname, time: @comment.created_at.strftime("%Y/%m/%d %H:%M:%S"), id: @mariage.id
+      ActionCable.server.broadcast 'comment_channel', content: @comment, nickname: @comment.user.nickname,
+                                                      time: @comment.created_at.strftime('%Y/%m/%d %H:%M:%S'), id: @mariage.id
     else
       @comments = @mariage.comments
       render 'mariages/show'

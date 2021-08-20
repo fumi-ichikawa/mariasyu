@@ -45,7 +45,6 @@ class MariagesController < ApplicationController
     @mariages = SearchMariagesService.search(params[:keyword]).paginate(page: params[:page])
   end
 
-  
   private
 
   def mariage_params
@@ -59,5 +58,4 @@ class MariagesController < ApplicationController
   def move_to_index
     redirect_to action: :index unless @mariage.user_id == current_user.id
   end
-
 end
