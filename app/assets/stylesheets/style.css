@@ -59,6 +59,10 @@ a {
 .logo {
   font-size: 2em;
   font-family: 'Courier New', Courier, monospace;
+  color: #3b4043;
+}
+.logo:hover{
+  opacity: 0.5;
 }
 .menu{
   display: flex;

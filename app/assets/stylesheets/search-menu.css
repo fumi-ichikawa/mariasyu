@@ -97,3 +97,49 @@
   background-color: rgba(0,173,169,0.5);
   color: #fff;
 }
+
+/* ページネーション */
+.pagination {
+  height: 100px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.pagination a {
+  background-color: #999;
+  text-decoration: none;
+}
+
+.pagination * {
+  color: white;
+  margin: 0 7px;
+  text-decoration: none;
+  padding: 12.5px 18.5px;
+  border-radius: 25px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.active a {
+  font-style: normal;
+  color: white;
+  background: #00ada9;
+  border-radius: 22.5px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.pagination a:hover {
+  background: rgba(0,173,169,0.5);
+}
+
+.pagination .disabled a {
+  color: #666;
+  padding: 11px 17px;
+  border: 1px solid #999;
+  border-radius: 23px;
+  font-family: 'Nunito', sans-serif;
+}
+.pagination li{
+  display: inline-block;
+}
