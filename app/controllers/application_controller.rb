@@ -18,5 +18,4 @@ class ApplicationController < ActionController::Base
   def search_mariage
     @p = Mariage.ransack(params[:q])
   end
-
 end
