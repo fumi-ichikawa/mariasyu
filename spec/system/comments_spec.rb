@@ -16,7 +16,7 @@ RSpec.describe 'コメント投稿', type: :system do
     fill_in 'comment_text', with: @comment
     # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
     expect  do
-      find('input[class="mariage__btn"]').click
+      find('input[class="commenr__btn"]').click
     end.to change { Comment.count }.by(1)
     # 詳細ページにリダイレクトされることを確認する
     expect(current_path).to eq(mariage_path(@mariage))

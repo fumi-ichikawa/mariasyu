@@ -46,7 +46,8 @@
 }
 .mariage__btn:hover{
   color: #fff;
-  background: #999;
+  background: #9ed6d3;
+  border: none;
 }
 .mariage__image{
   margin: 0 auto;
@@ -70,7 +71,9 @@ padding-right: 20px;
   padding-top: 10px;
   text-indent: -20px;
 }
-
+.mariage-user:hover{
+  opacity: 0.5;
+}
 /* コメント欄 */
 .mariage__comments{
   background-color: white;
@@ -79,12 +82,36 @@ padding-right: 20px;
   width: 50%;
   flex-direction: column;
 }
-
+.comment_title{
+  font-size: 20px;
+}
 .field{
  text-align: center;
  padding:30px 0;
 }
-
+.comment_field {
+  font-family: 'klee',serif;
+}
+.comment__btn {
+  font-family: 'klee',serif;
+  background-color: #fff;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+  width: 100px;
+  text-align: center;
+}
+.comment__btn:hover{
+  color: #fff;
+  background: #9ed6d3;
+  border: none;
+}
 #comments{
   padding-bottom: 10px;
   padding-left: 60px;
@@ -95,6 +122,9 @@ padding-right: 20px;
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+}
+.comment_user:hover{
+  opacity: 0.5;
 }
 .comment_time{
   font-size: 10px;
@@ -123,6 +153,9 @@ padding-right: 20px;
 }
 .card__img {
   margin-bottom: 16px;
+}
+.card__img:hover{
+  opacity: 0.5;
 }
 .card__title {
   display: block;

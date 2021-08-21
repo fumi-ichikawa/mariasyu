@@ -32,9 +32,9 @@
         <% if user_signed_in? %>
           <%= form_with model: [@mariage, @comment], local: true do |f| %>
             <div class="field">
-              <%= f.label :text, "コメント" %> 
-              <%= f.text_field :text, size: "50" %>
-              <%= f.submit "コメント送信", class: :mariage__btn %>
+              <%# <%= f.label :text, "コメントフォーム", class: :comment_title %> <br> 
+              <%= f.text_field :text, placeholder: " コメントを入力する", size: "60", class: :comment_field %>
+              <%= f.submit "コメント送信", class: :comment__btn %>
             </div>
           <% end %> 
       <% else %>

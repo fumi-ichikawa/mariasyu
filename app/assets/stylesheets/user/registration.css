@@ -61,7 +61,10 @@
   line-height: 48px;
 }
 .form-btn:hover{
-  opacity: 0.5;
+  background-color: #9ed6d3;
+  color: #fff;
+  font-size: 18px;
+  border: none;
 }
 .sns-login{
   margin-top: 20px;

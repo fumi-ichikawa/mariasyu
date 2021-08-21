@@ -81,6 +81,7 @@ a {
 }
 .btn:hover{
   opacity: 0.5;
+  background-color: #c0e3e5;
 }
 
 /* フッター */

@@ -92,9 +92,10 @@
   width: 33vh;
   height: 33vh;
 }
-
+.mariage-img:hover{
+  opacity: 0.5;
+}
 .mariage-info {
-  /* background-color: #FFF; */
   color: black;
   padding: 1vw;
 }
@@ -107,12 +108,12 @@ section {
   max-width: 300px;
   margin: 0 auto;
 }
+
 a.link_btn {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #fff; */
   border: 1px solid #00ada9;
   box-sizing: border-box;
   width: 20vw;
@@ -126,8 +127,10 @@ a.link_btn {
   transition-duration: 0.2s;
 }
 a.link_btn:hover {
-  background: #00ada9;
+  background: #9ed6d3;
   color: #fff;
+  border: none;
+  font-size: 18px;
 }
 a.link_btn:before {
   content: "";
