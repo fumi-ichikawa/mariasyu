@@ -11,11 +11,7 @@ RSpec.describe 'マリアージュ投稿', type: :system do
   context 'マリアージュ投稿ができるとき'do
     it 'ログインしたユーザーは新規投稿できる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'user_email', with: @user.email
-      fill_in 'user_password', with: @user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@user)
       # 新規投稿ページへのボタンがあることを確認する
       expect(page).to have_content('New Mariage')
       # 投稿ページに移動する
@@ -57,11 +53,7 @@ RSpec.describe 'マリアージュ編集', type: :system do
   context 'マリアージュ編集ができるとき' do
     it 'ログインしたユーザーは自分が投稿したマリアージュの編集ができる' do
       # マリアージュ1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'user_email', with: @mariage1.user.email
-      fill_in 'user_password', with: @mariage1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@mariage1.user)
       # マリアージュ1の詳細ページに移動する
       visit mariage_path(@mariage1)
       # 詳細ページに「編集」へのリンクがあることを確認する
@@ -93,11 +85,7 @@ RSpec.describe 'マリアージュ編集', type: :system do
   context 'マリアージュ編集ができないとき' do
     it 'ログインしたユーザーは自分以外が投稿したマリアージュの編集画面には遷移できない' do
       # マリアージュ1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'user_email', with: @mariage1.user.email
-      fill_in 'user_password', with: @mariage1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@mariage1.user)
       # マリアージュ2の詳細ページに移動する
       visit mariage_path(@mariage2)
       # マリアージュ2に「編集」へのリンクがないことを確認する
@@ -126,11 +114,7 @@ RSpec.describe 'マリアージュ削除', type: :system do
   context 'mariage削除ができるとき' do
     it 'ログインしたユーザーは自らが投稿したマリアージュの削除ができる' do
     # マリアージュ1を投稿したユーザーでログインする
-    visit new_user_session_path
-    fill_in 'user_email', with: @mariage1.user.email
-    fill_in 'user_password', with: @mariage1.user.password
-    find('input[name="commit"]').click
-    expect(current_path).to eq(root_path)
+    sign_in(@mariage1.user)
     # マリアージュ1の詳細ページに移動する
     visit mariage_path(@mariage1)
     # マリアージュ1に「削除」へのリンクがあることを確認する
@@ -148,11 +132,7 @@ RSpec.describe 'マリアージュ削除', type: :system do
   context 'マリアージュ削除ができないとき' do
     it 'ログインしたユーザーは自分以外が投稿したマリアージュの削除ができない' do
       # マリアージュ1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'user_email', with: @mariage1.user.email
-      fill_in 'user_password', with: @mariage1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@mariage1.user)
       # マリアージュ2の詳細ページに移動する
       visit mariage_path(@mariage2)
       # マリアージュ2に「削除」へのリンクがないことを確認する
@@ -178,11 +158,7 @@ RSpec.describe 'マリアージュ詳細', type: :system do
   end
   it 'ログインしたユーザーはマリアージュ詳細ページに遷移してコメント投稿欄が表示される' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'user_email', with: @mariage.user.email
-    fill_in 'user_password', with: @mariage.user.password
-    find('input[name="commit"]').click
-    expect(current_path).to eq root_path
+    sign_in(@mariage.user)
     # 詳細ページに遷移する
     visit mariage_path(@mariage)
     # 詳細ページにマリアージュの内容が含まれている
