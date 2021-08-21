@@ -42,7 +42,7 @@
                 <li class="pull-down">  - キーワード検索 -</li>
                 <li hidden class="pull-down-word">
                   <li hidden><%= form_with(url: search_mariages_path, local: true, method: :get) do |form| %></li>
-                    <li><%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %></li>
+                    <li><%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input", required: true %></li>
                     <li><%= form.submit "検索", class: "search-btn" %></li>
                   <li hidden><% end %></li>
                 </li>
@@ -51,8 +51,8 @@
                 <li hidden class="pull-down-category">
                   <li hidden><%= search_form_for @p, url: searches_search_path, class:"search-form-category" do |f| %></li>
                     <%# <%= f.label :name_eq, '- カテゴリ検索 -' %>
-                    <li><%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: '指定なし', class:"search-input", id:"mariage-category" %></li>
-                    <li><%= f.collection_select :taste_id_eq, Taste.all, :id, :name, include_blank: '指定なし', class:"search-cayegory", id:"mariage-taste" %></li>
+                    <li><%= f.collection_select :category_id_eq, Category.all, :id, :name, class:"search-input", id:"mariage-category" %></li>
+                    <li><%= f.collection_select :taste_id_eq, Taste.all, :id, :name, class:"search-cayegory", id:"mariage-taste" %></li>
                     
                     <li><%= f.submit '検索', class: "search-btn" %></li>
                   <li hidden><% end %></li>

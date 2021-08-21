@@ -2,13 +2,11 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comment_params)
     @mariage = @comment.mariage
+    @comments = @mariage.comments
     if @comment.save
-      # redirect_to mariage_path(@comment.mariage)
-      ActionCable.server.broadcast 'comment_channel', content: @comment, nickname: @comment.user.nickname,
-                                                      time: @comment.created_at.strftime('%Y/%m/%d %H:%M:%S'), id: @mariage.id
-    else
-      @comments = @mariage.comments
-      render 'mariages/show'
+      redirect_to mariage_path(@comment.mariage)
+      # ActionCable.server.broadcast 'comment_channel', content: @comment, nickname: @comment.user.nickname,
+      #                                                 time: @comment.created_at.strftime('%Y/%m/%d %H:%M:%S'), id: @mariage.id
     end
   end
 
