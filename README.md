@@ -30,9 +30,9 @@ TwitterやInstagramなどに投稿されているマリアージュを閲覧す�
 そこで、一つのアプリケーションにまとめることができたら便利なのでは？と考え作成しました。
 
 # 利用方法
-##　トップページ（仮）
+## トップページ（仮）
 [![Image from Gyazo](https://i.gyazo.com/2b6b5cffdb87c7bd7517e6960ff5386a.gif)](https://gyazo.com/2b6b5cffdb87c7bd7517e6960ff5386a)
-##　検索フォーム（仮）
+## 検索フォーム（仮）
 [![Image from Gyazo](https://i.gyazo.com/1072dbfefea01af01af5df22f904d64f.gif)](https://gyazo.com/1072dbfefea01af01af5df22f904d64f)
 ## 詳細ページ（仮）
 [![Image from Gyazo](https://i.gyazo.com/6b6c694ce778db02fbaa4ca557e47b74.gif)](https://gyazo.com/6b6c694ce778db02fbaa4ca557e47b74)
