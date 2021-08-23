@@ -17,5 +17,7 @@ class ApplicationController < ActionController::Base
 
   def search_mariage
     @p = Mariage.ransack(params[:q])
+    @category = Category.where.not(id: 1)
+    @taste = Taste.where.not(id: 1)
   end
 end

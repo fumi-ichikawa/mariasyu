@@ -51,8 +51,8 @@
                 <li hidden class="pull-down-category">
                   <li hidden><%= search_form_for @p, url: searches_search_path, class:"search-form-category" do |f| %></li>
                     <%# <%= f.label :name_eq, '- カテゴリ検索 -' %>
-                    <li><%= f.collection_select :category_id_eq, Category.all, :id, :name, class:"search-input", id:"mariage-category" %></li>
-                    <li><%= f.collection_select :taste_id_eq, Taste.all, :id, :name, class:"search-cayegory", id:"mariage-taste" %></li>
+                    <li><%= f.collection_select :category_id_eq, @category, :id, :name, include_blank:'--', class:"search-input", id:"mariage-category" %></li>
+                    <li><%= f.collection_select :taste_id_eq, @taste, :id, :name, include_blank:'--', class:"search-cayegory", id:"mariage-taste" %></li>
                     
                     <li><%= f.submit '検索', class: "search-btn" %></li>
                   <li hidden><% end %></li>
