@@ -74,3 +74,6 @@ gem 'ransack'
 gem 'will_paginate',           '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem "aws-sdk-s3", require: false
+group :production do
+  gem 'unicorn', '5.4.1'
+end
