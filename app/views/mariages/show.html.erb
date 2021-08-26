@@ -11,7 +11,9 @@
       </div>
     <% end %>
     <div class="mariage__image">
-      <%= image_tag @mariage.image %>
+      <% @mariage.images.each do |image| %>
+        <%= image_tag image, class:'images' %>
+      <% end %>
     </div>
     <div class="mariage_time">
       <%= l @mariage.created_at %>
