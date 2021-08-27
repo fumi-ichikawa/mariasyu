@@ -7,6 +7,17 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require('../preview') 
+require('jquery')
+require('../slick.min') 
+require('../original') 
+
+//= require jquery
+//= require jquery_ujs
+
+//= require rails-ujs
+//= require activestorage
+
+//= require_tree .
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

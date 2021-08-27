@@ -39,7 +39,10 @@
       <li class='list'>
         <%= link_to mariage_path(mariage.id), method: :get do %>
         <div class='mariage-img-content'>
-          <%= image_tag mariage.image, class: "mariage-img"  if mariage.image.attached? %>
+          <% mariage.images.each do |image| %>
+            <%= image_tag mariage.images[0], class:'images' %>
+            <% break %>
+          <% end %>
         </div>
         <div class='mariage-info'>
           <h3 class='mariage-name'>

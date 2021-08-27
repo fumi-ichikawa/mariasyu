@@ -6,10 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-
   </head>
 
   <body>
@@ -50,7 +55,6 @@
                 <li class="pull-down">  - カテゴリ検索 -</li>
                 <li hidden class="pull-down-category">
                   <li hidden><%= search_form_for @p, url: searches_search_path, class:"search-form-category" do |f| %></li>
-                    <%# <%= f.label :name_eq, '- カテゴリ検索 -' %>
                     <li><%= f.collection_select :category_id_eq, @category, :id, :name, include_blank:'--', class:"search-input", id:"mariage-category" %></li>
                     <li><%= f.collection_select :taste_id_eq, @taste, :id, :name, include_blank:'--', class:"search-cayegory", id:"mariage-taste" %></li>
                     
@@ -68,5 +72,7 @@
     <footer class="footer">
       <p class="copyright">Copyright © MARIASYU All rights reserved.</p>
     </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </body>
 </html>
