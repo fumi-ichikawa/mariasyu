@@ -47,6 +47,7 @@
     <div class="form-group">
       <div class='form-text-wrap'>
         <%= f.label :image, "マリアージュの写真（必須）", class:"form-text" %>
+        <div class="guide-text">※１枚目に選択した画像がサムネイルになります</div>
         <%= f.file_field :images, name: 'mariage[images][]', id:"mariage_image", class:"select-box", multiple: true %>
         <div id="image-list">
           <% @mariage.images.each do |image| %>
