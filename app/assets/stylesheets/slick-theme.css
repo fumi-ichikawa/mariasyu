@@ -114,6 +114,10 @@
 }
 
 /* Dots */
+.slick-dots > li:only-child {
+    display: none;
+}
+
 .slick-dotted.slick-slider
 {
     margin-bottom: 30px;
