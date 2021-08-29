@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'searches/search', to: 'searches#search'
   resources :users, only: :show
   resources :mariages do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
     collection do
       get 'search'
     end
