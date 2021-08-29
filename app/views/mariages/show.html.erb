@@ -7,7 +7,7 @@
     <% if user_signed_in? && current_user.id == @mariage.user_id %>
       <div class="mariage__manage">
         <%= link_to "編集する", edit_mariage_path(@mariage.id), class: :mariage__btn %>
-        <%= link_to "削除する", mariage_path(@mariage.id), class: :mariage__btn, method: :delete %>
+        <%= link_to "削除する", mariage_path(@mariage.id), data:{confirm: 'マリアージュを削除してもよろしいですか？'}, class: :mariage__btn, method: :delete %>
       </div>
     <% end %>
     <div class="mariage__image">
@@ -49,8 +49,11 @@
               <div class='comment-top'>
                 <p>
                 <li class="comments_list">
-                  <p><%= link_to comment.user.nickname, "/users/#{@mariage.user.id}", class: :comment_user %>
+                  <p><%= link_to comment.user.nickname, "/users/#{comment.user.id}", class: :comment_user %>
                     <span class="comment_time"><%= l comment.created_at %></span>
+                    <%if current_user.id == comment.user.id %>
+                      <%= link_to '削除', mariage_comment_path(@mariage, comment), data:{confirm: 'コメントを削除してもよろしいですか？'},class:"comment_user", method: :delete %>
+                    <% end %>
                   </p>
                   <div class='comment-bottom'>
                     <%= comment.text %>
