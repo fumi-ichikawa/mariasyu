@@ -54,7 +54,8 @@ class MariagesController < ApplicationController
   private
 
   def mariage_params
-    params.require(:mariage).permit(:title, :text, :category_id, :taste_id, images:[],images_attachments_attributes: [ :id, :_destroy ]).merge(user_id: current_user.id)
+    params.require(:mariage).permit(:title, :text, :category_id, :taste_id, images: [],
+                                                                            images_attachments_attributes: [:id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def set_mariage
