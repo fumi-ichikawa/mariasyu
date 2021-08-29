@@ -6,6 +6,7 @@ class Mariage < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many_attached :images
+  accepts_nested_attributes_for :images_attachments, allow_destroy: true
 
   with_options presence: true do
     validates :images
