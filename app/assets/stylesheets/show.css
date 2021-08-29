@@ -153,6 +153,9 @@ padding-right: 20px;
 }
 .card__img {
   margin-bottom: 16px;
+  height: 45vh;
+  width: 100%;
+  object-fit: cover;
 }
 .card__img:hover{
   opacity: 0.5;
