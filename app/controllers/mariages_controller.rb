@@ -29,6 +29,12 @@ class MariagesController < ApplicationController
   end
 
   def update
+    if params[:mariage][:image_ids]
+      params[:mariage][:image_ids].each do |image_id|
+        image = @mariage.images.find(image_id)
+        image.purge
+      end
+    end
     if @mariage.update(mariage_params)
       redirect_to mariage_path(@mariage)
     else
@@ -48,7 +54,7 @@ class MariagesController < ApplicationController
   private
 
   def mariage_params
-    params.require(:mariage).permit(:title, :text, :category_id, :taste_id, images:[]).merge(user_id: current_user.id)
+    params.require(:mariage).permit(:title, :text, :category_id, :taste_id, images:[],images_attachments_attributes: [ :id, :_destroy ]).merge(user_id: current_user.id)
   end
 
   def set_mariage
