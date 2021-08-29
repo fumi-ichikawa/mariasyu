@@ -3,9 +3,7 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comment_params)
     @mariage = @comment.mariage
     @comments = @mariage.comments
-    if @comment.save
-      redirect_to mariage_path(@comment.mariage)
-    end
+    redirect_to mariage_path(@comment.mariage) if @comment.save
   end
 
   def destroy
@@ -13,9 +11,9 @@ class CommentsController < ApplicationController
     comment = @mariage.comments.find(params[:id])
     if current_user.id == comment.user.id
       comment.destroy
-    redirect_back(fallback_location: root_path)
+      redirect_back(fallback_location: root_path)
     else
-      render "mariages/show"
+      render 'mariages/show'
     end
   end
 
