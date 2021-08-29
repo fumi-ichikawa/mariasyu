@@ -5,8 +5,17 @@ class CommentsController < ApplicationController
     @comments = @mariage.comments
     if @comment.save
       redirect_to mariage_path(@comment.mariage)
-      # ActionCable.server.broadcast 'comment_channel', content: @comment, nickname: @comment.user.nickname,
-      #                                                 time: @comment.created_at.strftime('%Y/%m/%d %H:%M:%S'), id: @mariage.id
+    end
+  end
+
+  def destroy
+    @mariage = Mariage.find(params[:mariage_id])
+    comment = @mariage.comments.find(params[:id])
+    if current_user.id == comment.user.id
+      comment.destroy
+    redirect_back(fallback_location: root_path)
+    else
+      render "mariages/show"
     end
   end
 
