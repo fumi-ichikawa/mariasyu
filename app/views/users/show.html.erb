@@ -1,7 +1,14 @@
 <div class="user__wrapper">
-  <h2 class="user__hedding">
-    <%= @user.nickname + "さんのマリアージュ一覧"%>
-  </h2>
+  <div class="user_head">
+    <h2 class="mariage__hedding">
+      <%= @user.nickname + "さんのマリアージュ一覧"%>
+    </h2>
+    <% if user_signed_in? && @user == current_user %>
+      <div class="mariage__manage">
+        <%= link_to "会員情報編集", edit_user_path(current_user), class: :mariage__btn%>
+      </div>
+    <% end %>
+  </div>
   <div class="user__card">
     <%= render partial: 'mariages/mariage', collection: @mariages %> 
   </div>

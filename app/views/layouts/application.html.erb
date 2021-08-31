@@ -28,7 +28,7 @@
               <span class="nav__right">
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, class: :btn %>
                 <%= link_to "New Mariage", new_mariage_path, class: :btn %>
-                <%= link_to "My Page",  "/users/#{current_user.id}" , class: :btn%>
+                <%= link_to "My Mariage", "/users/#{current_user.id}" , class: :btn%>
               </span>
             <% else %>
               <span class="nav__right">
