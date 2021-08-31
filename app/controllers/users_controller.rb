@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
@@ -9,6 +10,9 @@ class UsersController < ApplicationController
   end
 
   def update
+    if params[:user][:password].blank?
+      params[:user].delete("password")
+    end
     if current_user.update(user_params)
       redirect_to "/users/#{current_user.id}"
     else
