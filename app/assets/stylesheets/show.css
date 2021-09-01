@@ -2,13 +2,11 @@
 
 .show-main {
   width: 100%;
-  min-width: 800px;
   height: 100%;
   background-color: #f5f5f5;
 }
 
 .mariage-wrap{
-  min-height: calc(100vh - 161px);
   width: 50%;
   background-color: white;
   margin: 0 auto 0 auto;  
