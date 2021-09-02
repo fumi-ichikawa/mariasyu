@@ -40,7 +40,8 @@
 .mean-image-syu{
   box-shadow: 30px 30px 0 rgba(158,214,211,0.5);
 }
-.top-text{
+.top-text-ge,
+.top-text-syu{
   /* width: 30%; */
   /* background-color: white; */
   display: flex;
