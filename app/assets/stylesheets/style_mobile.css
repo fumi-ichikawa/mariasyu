@@ -64,7 +64,7 @@
     right: 100%;
     z-index: 80;
     background-color: rgba(192,227,229,0.5);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
     padding: 0 20px 50px;
   }
   .menu-content ul {
@@ -116,7 +116,7 @@
     text-align: center;
     background-color: rgba(158,214,211,0.5);
     font-weight: bold;
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
   }
   .top-text-ge{
     left: 20%;
