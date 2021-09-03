@@ -36,13 +36,19 @@ TwitterやInstagramなどに投稿されているマリアージュを閲覧す�
 [![Image from Gyazo](https://i.gyazo.com/76d5cf25f8744b687e023e38e1a927b6.gif)](https://gyazo.com/76d5cf25f8744b687e023e38e1a927b6)
 ### 検索フォーム
 [![Image from Gyazo](https://i.gyazo.com/5332fbe7d01ea5c85e8cbb5078e24406.gif)](https://gyazo.com/5332fbe7d01ea5c85e8cbb5078e24406)
-### 詳細ページ（仮）
-[![Image from Gyazo](https://i.gyazo.com/6b6c694ce778db02fbaa4ca557e47b74.gif)](https://gyazo.com/6b6c694ce778db02fbaa4ca557e47b74)
+### 詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/b4a0ab7df74fd02e4a53901ea5db1671.gif)](https://gyazo.com/b4a0ab7df74fd02e4a53901ea5db1671)
+### スマホからの閲覧
+[![Image from Gyazo](https://i.gyazo.com/a4df505723211f2063f02a67e4c97152.gif)](https://gyazo.com/a4df505723211f2063f02a67e4c97152)
 
 # 工夫したポイント
 ### SNS認証の導入
-ユーザー登録の際に、FacebookまたはGoogleアカウントでのSNS認証を導入し
-登録をしやすくしました。
+ユーザー登録の際に、FacebookまたはGoogleアカウントでのSNS認証を導入することで
+パスワードの設定を省略し、登録をしやすくしました。
+### SSL化・ドメインの取得
+SNS認証導入に伴い、セキュリティの観点からSSL化を行いました。
+ドメイン取得〜SSLサーバー証明書取得までの工程は、カリキュラムに無かった為
+手探りでの実装になりましたが、大変学びが多い実装になりました。
 ### トップページに必要以上の情報を表示させない
 どういったアプリケーションなのかが分かるように、マリアージュとマリアーシュの説明を記述し
 見やすいようにマリアージュは最新3件のみを表示させました。
@@ -54,10 +60,13 @@ TwitterやInstagramなどに投稿されているマリアージュを閲覧す�
 複数画像投稿を可能にしたことにより、詳細ページでの画像表示が見づらくなってしまいました。
 （具体的には、枚数が多ければ多いほどスクロールが必要になってしまいました。）
 この問題を解決するために、詳細ページでは画像をスライドで表示させました。
+### レスポンシブデザインの実装
+いつでも、どこからでもアプリを使用してもらえるように、スマートフォンからの閲覧でも
+レイアウトが崩れないように編集しました。
 
 # 使用技術
 ### 開発環境
-Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
+HTML/CSS/Ruby/Ruby on Rails/MySQL/Github/Jquery/AWS/Visual Studio Code
 ### 開発期間と平均作業時間
 開発期間              ：8/6~8/29 (23日間)
 1日あたりの平均作業時間 ：11
@@ -65,7 +74,6 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
 # 課題や今後実装したい機能
 ### ユーザー管理機能
-- プロフィール編集機能
 - パスワードを忘れた時の対応機能
 ### 法人アカウントの作成
 - 飲食店や酒屋さんなどを対象に法人アカウント作成機能
