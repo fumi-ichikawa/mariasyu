@@ -22,7 +22,58 @@
       <div class="inner">
         <div class="nav">
           <%= link_to "MariaSyu", root_path, class: :logo %>
-          
+<%# ハンバーガーメニュー %>
+          <div class="hamburger-menu">
+            <input type="checkbox" id="menu-btn-check">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+            <div class="menu-content">
+              <ul>
+                <% if user_signed_in? %>
+                  <li>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: :hamburger_btn %>
+                  </li>
+                  <li>
+                    <%= link_to "New Mariage", new_mariage_path, class: :hamburger_btn %>
+                  </li>
+                  <li>
+                    <%= link_to "My Mariage", "/users/#{current_user.id}" , class: :hamburger_btn%>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to "Login", new_user_session_path, class: :hamburger_btn %>
+                  </li>
+                  <li>
+                    <%= link_to "新規登録", new_user_registration_path, class: :hamburger_btn %>
+                  </li>
+                <% end %>
+                    <li>
+                      <%= link_to "一覧で全て見る", searches_index_path, method: :get, class: :hamburger_btn %>
+                    </li>
+                    <li class="menu-padding">  - キーワード検索 -</li>
+                    <li hidden>
+                      <%= form_with(url: search_mariages_path, local: true, method: :get) do |form| %>
+                    </li>
+                    <li>
+                      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input", required: true %>
+                    </li>
+                    <li>
+                      <%= form.submit "検索", class: "search-btn" %>
+                    </li>
+                    <li hidden><% end %></li>
+                    <li class="menu-padding">  - カテゴリ検索 -</li>
+                    <li hidden class="pull-down-category">
+                      <li hidden><%= search_form_for @p, url: searches_search_path, class:"search-form-category" do |f| %></li>
+                        <li><%= f.collection_select :category_id_eq, @category, :id, :name, include_blank:'--', class:"search-input", id:"mariage-category" %></li>
+                        <li><%= f.collection_select :taste_id_eq, @taste, :id, :name, include_blank:'--', class:"search-cayegory", id:"mariage-taste" %></li>
+                        <li><%= f.submit '検索', class: "search-btn" %></li>
+                      <li hidden><% end %></li>
+                    </li>
+                  </ul>
+                </span>
+              </ul>
+            </div>
+          </div>
+<%# PC画面用メニュー %>
           <div class="menu">
             <% if user_signed_in? %>
               <span class="nav__right">

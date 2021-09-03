@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :move_to_index, only: [:edit, :update]
 
   def show
-    @mariages = @user.mariages.includes(:user).order('created_at DESC')
+    @mariages = @user.mariages.includes(:user).order('created_at DESC').paginate(page: params[:page], per_page: 6)
   end
 
   def edit

@@ -31,7 +31,7 @@
 }
 .mean-image-ge,
 .mean-image-syu{
-  width: 30%;
+  width: 30vw;
   margin: 0 5vw;
 }
 .mean-image-ge{
@@ -40,21 +40,18 @@
 .mean-image-syu{
   box-shadow: 30px 30px 0 rgba(158,214,211,0.5);
 }
-.top-text{
-  /* width: 30%; */
-  /* background-color: white; */
+.top-text-ge,
+.top-text-syu{
   display: flex;
   justify-content: flex-start;
   align-items: center;
   display: inline;
   margin: auto 0;
-  
 }
 .color-change{
   font-weight: bold;
   color: #00ada9;
 }
-
 
 /* 新着投稿一覧 */
 .mariage-contents {
@@ -87,9 +84,7 @@
 .mariage-lists>.list {
   width: 37vh;
   padding: 1vw;
-  /* background-color: #FFF; */
 }
-
 
 .mariage-img-content {
   position: relative;

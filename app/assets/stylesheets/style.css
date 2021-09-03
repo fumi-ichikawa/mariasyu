@@ -96,37 +96,3 @@ a {
   color: #fff;
   font-size: 10px;
 }
-
-/* タブレット対応 */
-@media (max-width: 1024px) {
-  .card {
-    width: 48%;
-    margin-bottom: 40px;
-  }
-  .mariage_image{
-    width: 60%;
-  }
-}
-
- /* スマホ表示 */
-@media (max-width: 599px) {
-  .logo {
-    width: 120px;
-  }
-  .card {
-    width: 100%;
-    margin-bottom: 60px;
-  }
-  .card__title {
-    font-size: 18px;
-  }
-  .card__summary {
-    font-size: 14px;
-  }
-  .mariage_image{
-    width: 100%;
-  }
-  .table{
-    width: 100%;
-  }
-}

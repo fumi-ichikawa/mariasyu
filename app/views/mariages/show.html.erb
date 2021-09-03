@@ -51,7 +51,7 @@
                 <li class="comments_list">
                   <p><%= link_to comment.user.nickname, "/users/#{comment.user.id}", class: :comment_user %>
                     <span class="comment_time"><%= l comment.created_at %></span>
-                    <%if current_user.id == comment.user.id %>
+                    <% if user_signed_in? && current_user.id == comment.user.id %>
                       <%= link_to '削除', mariage_comment_path(@mariage, comment), data:{confirm: 'コメントを削除してもよろしいですか？'},class:"comment_user", method: :delete %>
                     <% end %>
                   </p>

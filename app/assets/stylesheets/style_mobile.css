@@ -1,0 +1,171 @@
+#menu-btn-check {
+  display: none;
+}
+@media (min-width: 600px) {
+  .hamburger-menu{
+    display: none;
+  }
+}
+/* スマホ表示 */
+@media (max-width: 599px) {
+
+  /* ヘッダー */
+  .menu{
+    display: none;
+  }
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #9ed6d3;
+  }
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+  }
+  .menu-btn span:before {
+    bottom: 8px;
+  }
+  .menu-btn span:after {
+    top: 8px;
+  }
+  #menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  #menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  #menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  #menu-btn-check:checked ~ .menu-content {
+    right: 0;
+  }
+  .menu-content {
+    width: 80%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    right: 100%;
+    z-index: 80;
+    background-color: rgba(192,227,229,0.5);
+    backdrop-filter: blur(5px);
+    padding: 0 20px 50px;
+  }
+  .menu-content ul {
+    padding: 70px 10px 0;
+  }
+  .menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+  }
+  .menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#3b4043;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+  }
+  .menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+  }
+  .menu-padding{
+    padding: 10px 0;
+  }
+  .hamburger_btn:hover{
+    background-color: rgba(158,214,211,0.5);
+    color: #fff;
+  }
+  /* トップページ */
+  .mariage-mean{
+    position: relative;
+    padding: 80px 0;
+  }
+  .top-text-ge,
+  .top-text-syu{
+    position: absolute;
+    width: 80%;
+    height: 60%;
+    top:30%;
+    text-align: center;
+    background-color: rgba(158,214,211,0.5);
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+  }
+  .top-text-ge{
+    left: 20%;
+    padding: 20px 0 20px 10px;
+  }
+  .top-text-syu{
+    right: 20%;
+    padding: 20px 0 20px 0;
+  }
+  .mean-image-ge,
+  .mean-image-syu{
+    width: 80vw;
+    float: left;
+    box-shadow: none;
+  }
+  .color-change{
+    font-size: 20px;
+    text-shadow: 2px 2px 2px rgba(255,255,255,0.5) ;
+  }
+  a.link_btn{
+    width: 30vw;
+  }
+  /* ユーザー登録ページ */
+  .form-wrap{
+    width: 100% !important; 
+  }
+  /* 検索ページ */
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .mariage_image{
+    width: 100%;
+  }
+  .pagination * {
+    padding:12.5px 10px;
+  }
+  /* 詳細ページ */
+  .mariage-wrap,
+  .mariage__comments{
+    width: 100vw;
+  }
+  .mariage__detail{
+    padding: 50px !important;
+  }
+  .field strong{
+    font-size: 12px;
+  }
+}
