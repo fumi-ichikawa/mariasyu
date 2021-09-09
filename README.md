@@ -14,7 +14,7 @@
 
 # 本番環境
 ### デプロイ先
-- URL(仮) : https://mariasyu.herokuapp.com/
+- URL     : https://mariasyu.com/
 ### Basic認証
 - ID      : admin
 - PASS    : 2222
